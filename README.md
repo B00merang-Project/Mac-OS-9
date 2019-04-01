@@ -17,7 +17,7 @@ Extract the zip file to the themes directory i.e. `/home/USERNAME/.themes`
 
 ### Requirements
 
-- GTK+ 3.16 or above
+- GTK+ 3.20 or above
 - Murrine and Pixmap theme engines
 
 ### Contribute
