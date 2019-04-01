@@ -51,7 +51,7 @@
 @define-color color_shadow @selected_bg_color;
 @define-color light_shadow rgb(255, 255, 255);
 /* Borders */
-@define-color borders @fg_color;
+@define-color borders shade(@bg_color, 0.8);
 @define-color outline_color @fg_color;
 @define-color unfocused_borders @unfocused_fg_color;
 /* Notification header backgrounds */
