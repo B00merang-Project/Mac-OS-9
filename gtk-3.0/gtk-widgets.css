@@ -2321,23 +2321,23 @@ messagedialog {
     background-color: @titlebar_bg_color; }
   .titlebar .titlebutton.close, .titlebar .titlebutton.maximize, .titlebar .titlebutton.minimize, .titlebar .titlebutton:not(separator) {
     color: transparent;
-    padding: 2px;
+    padding: 0;
+    min-width: 17px;
+    min-height: 17px;
     box-shadow: none;
     border: none;
-    background-color: @titlebar_bg_color;
     border-radius: 0;
     -gtk-icon-shadow: none;
-    background-size: 13px 13px;
     background-position: center;
     background-repeat: no-repeat; }
   .titlebar .titlebutton.close {
-    background-image: url("assets/close.png"); }
+    background: url("assets/close.png"), @titlebar_bg_color; }
   .titlebar .titlebutton.minimize {
-    background-image: url("assets/minimize.png"); }
+    background: url("assets/minimize.png"), @titlebar_bg_color; }
   .titlebar .titlebutton.maximize {
-    background-image: url("assets/maximize.png"); }
+    background: url("assets/maximize.png"), @titlebar_bg_color; }
   .titlebar .titlebutton:backdrop {
-    background-image: none; }
+    background: @titlebar_bg_color; }
   .tiled .titlebar:not(headerbar), .tiled .titlebar:backdrop:not(headerbar), .maximized .titlebar:not(headerbar), .maximized .titlebar:backdrop:not(headerbar) {
     border-radius: 0; }
 
@@ -2345,11 +2345,10 @@ messagedialog {
   min-height: 30px;
   color: @titlebar_fg_color;
   background-image: url("assets/titlebar.png");
-  background-size: 98% 12px;
-  background-position: 4px 46%;
-  background-repeat: no-repeat;
+  background-size: 100% 32px;
+  background-repeat: no-repeat repeat;
   background-color: @titlebar_bg_color;
-  box-shadow: inset 1px 1px @light_shadow, inset -1px -1px shade(@titlebar_bg_color, 0.85); }
+  box-shadow: inset 0 0 0 4px @titlebar_bg_color, inset 1px 1px @light_shadow, inset -1px -1px shade(@titlebar_bg_color, 0.85); }
   .titlebar:backdrop, .titlebar:not(headerbar):backdrop, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop, .default-decoration.titlebar:not(headerbar):backdrop, .csd .default-decoration.titlebar:not(headerbar):backdrop {
     box-shadow: none;
     color: @theme_unfocused_fg_color;
