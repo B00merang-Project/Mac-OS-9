@@ -986,11 +986,6 @@ notebook {
     notebook tab:checked {
       border-color: @borders;
       background-color: @theme_bg_color; }
-    notebook tab button:focus, notebook tab button:backdrop, notebook tab button:hover:focus, notebook tab button:hover:backdrop, notebook tab button:active:focus, notebook tab button:active:backdrop, notebook tab button:checked:focus, notebook tab button:checked:backdrop, notebook tab button:disabled:focus, notebook tab button:disabled:backdrop, notebook tab:checked button:focus, notebook tab:checked button:backdrop, notebook tab:checked button:hover:focus, notebook tab:checked button:hover:backdrop, notebook tab:checked button:active:focus, notebook tab:checked button:active:backdrop, notebook tab:checked button:checked:focus, notebook tab:checked button:checked:backdrop, notebook tab:checked button:disabled:focus, notebook tab:checked button:disabled:backdrop {
-      color: @theme_fg_color;
-      border-color: transparent;
-      background-color: transparent;
-      box-shadow: none; }
   notebook > header {
     padding-top: 2px;
     background-color: @theme_bg_color; }
@@ -1623,6 +1618,7 @@ switch {
     background-color: @theme_bg_color; }
   switch:disabled slider {
     box-shadow: none;
+    border-color: shade(@theme_disabled_bg_color, 0.9);
     background-color: @theme_disabled_bg_color; }
 
 textview {
@@ -1740,7 +1736,7 @@ headerbar, headerbar:not(.titlebar) {
     border-width: 1px;
     border-radius: 3px;
     color: @headerbar_fg_color;
-    border-color: shade(@borders, 0.55);
+    border-color: shade(shade(@borders, 0.9), 0.55);
     background-color: @headerbar_bg_color;
     -gtk-outline-radius: 5px;
     box-shadow: inset 2px 2px @light_shadow, inset 1px 1px @theme_bg_color, inset -2px -2px shade(@theme_bg_color, 0.85), inset -1px -1px shade(@theme_bg_color, 0.65);
@@ -1877,114 +1873,114 @@ toolbar {
       box-shadow: none;
       border-color: shade(@theme_bg_color, 0.7); }
 
-.linked button, .linked .raised button, .inline-toolbar .linked button, .inline-toolbar .linked .raised button, .primary-toolbar .linked button, .primary-toolbar .linked .raised button {
+.linked button, .linked .raised button, .inline-toolbar .linked button, .inline-toolbar .linked .raised button, .primary-toolbar .linked button, .primary-toolbar .linked .raised button, .osd .linked button, .osd .linked .raised button, .inline-toolbar .osd .linked button, .inline-toolbar .osd .linked .raised button, .primary-toolbar .osd .linked button, .primary-toolbar .osd .linked .raised button {
   border-radius: 0;
   border-left-width: 0; }
-  .linked button:first-child, .linked .raised button:first-child, .inline-toolbar .linked button:first-child, .inline-toolbar .linked .raised button:first-child, .primary-toolbar .linked button:first-child, .primary-toolbar .linked .raised button:first-child {
+  .linked button:first-child, .linked .raised button:first-child, .inline-toolbar .linked button:first-child, .inline-toolbar .linked .raised button:first-child, .primary-toolbar .linked button:first-child, .primary-toolbar .linked .raised button:first-child, .osd .linked button:first-child, .osd .linked .raised button:first-child, .inline-toolbar .osd .linked button:first-child, .inline-toolbar .osd .linked .raised button:first-child, .primary-toolbar .osd .linked button:first-child, .primary-toolbar .osd .linked .raised button:first-child {
     border-left-width: 1px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px; }
-  .linked button:last-child, .linked .raised button:last-child, .inline-toolbar .linked button:last-child, .inline-toolbar .linked .raised button:last-child, .primary-toolbar .linked button:last-child, .primary-toolbar .linked .raised button:last-child {
+  .linked button:last-child, .linked .raised button:last-child, .inline-toolbar .linked button:last-child, .inline-toolbar .linked .raised button:last-child, .primary-toolbar .linked button:last-child, .primary-toolbar .linked .raised button:last-child, .osd .linked button:last-child, .osd .linked .raised button:last-child, .inline-toolbar .osd .linked button:last-child, .inline-toolbar .osd .linked .raised button:last-child, .primary-toolbar .osd .linked button:last-child, .primary-toolbar .osd .linked .raised button:last-child {
     border-left-width: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px; }
-  .linked button:only-child, .linked .raised button:only-child, .inline-toolbar .linked button:only-child, .inline-toolbar .linked .raised button:only-child, .primary-toolbar .linked button:only-child, .primary-toolbar .linked .raised button:only-child {
+  .linked button:only-child, .linked .raised button:only-child, .inline-toolbar .linked button:only-child, .inline-toolbar .linked .raised button:only-child, .primary-toolbar .linked button:only-child, .primary-toolbar .linked .raised button:only-child, .osd .linked button:only-child, .osd .linked .raised button:only-child, .inline-toolbar .osd .linked button:only-child, .inline-toolbar .osd .linked .raised button:only-child, .primary-toolbar .osd .linked button:only-child, .primary-toolbar .osd .linked .raised button:only-child {
     border-width: 1px;
     border-radius: 3px; }
-.linked entry, .inline-toolbar .linked entry, .primary-toolbar .linked entry {
+.linked entry, .inline-toolbar .linked entry, .primary-toolbar .linked entry, .osd .linked entry, .inline-toolbar .osd .linked entry, .primary-toolbar .osd .linked entry {
   border-radius: 0;
   border-left-width: 0; }
-  .linked entry:first-child, .inline-toolbar .linked entry:first-child, .primary-toolbar .linked entry:first-child {
+  .linked entry:first-child, .inline-toolbar .linked entry:first-child, .primary-toolbar .linked entry:first-child, .osd .linked entry:first-child, .inline-toolbar .osd .linked entry:first-child, .primary-toolbar .osd .linked entry:first-child {
     border-left-width: 1px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
-  .linked entry:last-child, .inline-toolbar .linked entry:last-child, .primary-toolbar .linked entry:last-child {
+  .linked entry:last-child, .inline-toolbar .linked entry:last-child, .primary-toolbar .linked entry:last-child, .osd .linked entry:last-child, .inline-toolbar .osd .linked entry:last-child, .primary-toolbar .osd .linked entry:last-child {
     border-left-width: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
-  .linked entry:only-child, .inline-toolbar .linked entry:only-child, .primary-toolbar .linked entry:only-child {
+  .linked entry:only-child, .inline-toolbar .linked entry:only-child, .primary-toolbar .linked entry:only-child, .osd .linked entry:only-child, .inline-toolbar .osd .linked entry:only-child, .primary-toolbar .osd .linked entry:only-child {
     border-width: 1px;
     border-radius: 0px; }
-.linked combobox box.linked button, .inline-toolbar .linked combobox box.linked button, .primary-toolbar .linked combobox box.linked button {
+.linked combobox box.linked button, .inline-toolbar .linked combobox box.linked button, .primary-toolbar .linked combobox box.linked button, .osd .linked combobox box.linked button, .inline-toolbar .osd .linked combobox box.linked button, .primary-toolbar .osd .linked combobox box.linked button {
   border-radius: 0;
   border-left-width: 0; }
-.linked combobox:first-child box.linked button, .inline-toolbar .linked combobox:first-child box.linked button, .primary-toolbar .linked combobox:first-child box.linked button {
+.linked combobox:first-child box.linked button, .inline-toolbar .linked combobox:first-child box.linked button, .primary-toolbar .linked combobox:first-child box.linked button, .osd .linked combobox:first-child box.linked button, .inline-toolbar .osd .linked combobox:first-child box.linked button, .primary-toolbar .osd .linked combobox:first-child box.linked button {
   border-left-width: 1px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px; }
-.linked combobox:last-child box.linked button, .inline-toolbar .linked combobox:last-child box.linked button, .primary-toolbar .linked combobox:last-child box.linked button {
+.linked combobox:last-child box.linked button, .inline-toolbar .linked combobox:last-child box.linked button, .primary-toolbar .linked combobox:last-child box.linked button, .osd .linked combobox:last-child box.linked button, .inline-toolbar .osd .linked combobox:last-child box.linked button, .primary-toolbar .osd .linked combobox:last-child box.linked button {
   border-left-width: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
-.linked combobox:only-child box.linked button, .inline-toolbar .linked combobox:only-child box.linked button, .primary-toolbar .linked combobox:only-child box.linked button {
+.linked combobox:only-child box.linked button, .inline-toolbar .linked combobox:only-child box.linked button, .primary-toolbar .linked combobox:only-child box.linked button, .osd .linked combobox:only-child box.linked button, .inline-toolbar .osd .linked combobox:only-child box.linked button, .primary-toolbar .osd .linked combobox:only-child box.linked button {
   border-width: 1px;
   border-radius: 3px; }
 
-.vertical.linked button {
+.vertical.linked button, .osd .vertical.linked button {
   border-left-width: 1px;
   border-top-width: 0;
   border-radius: 0; }
-  .vertical.linked button:first-child {
+  .vertical.linked button:first-child, .osd .vertical.linked button:first-child {
     border-top-width: 1px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
-  .vertical.linked button:last-child {
+  .vertical.linked button:last-child, .osd .vertical.linked button:last-child {
     border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
-  .vertical.linked button:only-child {
+  .vertical.linked button:only-child, .osd .vertical.linked button:only-child {
     border-top-width: 1px; }
-.vertical.linked entry {
+.vertical.linked entry, .osd .vertical.linked entry {
   border-left-width: 1px;
   border-top-width: 0;
   border-radius: 0; }
-  .vertical.linked entry:first-child {
+  .vertical.linked entry:first-child, .osd .vertical.linked entry:first-child {
     border-top-width: 1px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
-  .vertical.linked entry:last-child {
+  .vertical.linked entry:last-child, .osd .vertical.linked entry:last-child {
     border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px; }
-  .vertical.linked entry:only-child {
+  .vertical.linked entry:only-child, .osd .vertical.linked entry:only-child {
     border-top-width: 1px; }
-.vertical.linked combobox box.linked button {
+.vertical.linked combobox box.linked button, .osd .vertical.linked combobox box.linked button {
   border-left-width: 1px;
   border-top-width: 0;
   border-radius: 0; }
-.vertical.linked combobox:first-child box.linked button {
+.vertical.linked combobox:first-child box.linked button, .osd .vertical.linked combobox:first-child box.linked button {
   border-top-width: 1px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0; }
-.vertical.linked combobox:last-child box.linked button {
+.vertical.linked combobox:last-child box.linked button, .osd .vertical.linked combobox:last-child box.linked button {
   border-top-width: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px; }
-.vertical.linked combobox:only-child box.linked button {
+.vertical.linked combobox:only-child box.linked button, .osd .vertical.linked combobox:only-child box.linked button {
   border-top-width: 1px; }
-.vertical.linked spinbutton button:first-child {
+.vertical.linked spinbutton button:first-child, .osd .vertical.linked spinbutton button:first-child {
   border-width: 1px;
   border-top-width: 0;
   border-left-width: 1px; }
-.vertical.linked spinbutton button:last-child {
+.vertical.linked spinbutton button:last-child, .osd .vertical.linked spinbutton button:last-child {
   border-width: 0;
   border-left-width: 1px;
   border-right-width: 1px;
@@ -2017,6 +2013,8 @@ treeview {
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color; }
   treeview header button {
+    outline-style: none;
+    box-shadow: none;
     border-width: 0 1px 1px 0;
     border-radius: 0; }
     treeview header button, treeview header button:active, treeview header button:focus, treeview header button:active:focus {
@@ -2107,6 +2105,8 @@ searchbar {
   border-color: shade(@osd_bg, 0.8);
   border-radius: 3px;
   background-image: none;
+  box-shadow: none;
+  outline-style: none;
   background-color: shade(@osd_bg, 1.08);
   color: @osd_fg; }
   .osd button:hover, button.osd:hover {
@@ -2139,6 +2139,7 @@ searchbar {
     border-style: solid;
     border-color: shade(@osd_bg, 0.8);
     border-radius: 3px;
+    box-shadow: none;
     background-image: none;
     background-color: shade(@osd_bg, 1.08);
     color: @osd_fg; }
@@ -2161,11 +2162,11 @@ searchbar {
     color: shade(@osd_bg, 0.9); }
 
 .osd scale slider, scale.osd slider {
-  background-color: @theme_selected_bg_color; }
+  background-color: transparent; }
   .osd scale slider:hover, scale.osd slider:hover {
-    background-color: @theme_selected_bg_color; }
+    background-color: transparent; }
   .osd scale slider:disabled, scale.osd slider:disabled {
-    background-color: mix(@osd_bg, @osd_fg, 0.15); }
+    background-color: transparent; }
 .osd scale trough, scale.osd trough {
   border-color: mix(@osd_bg, @osd_fg, 0.15); }
   .osd scale trough:disabled, scale.osd trough:disabled {
@@ -2574,8 +2575,10 @@ panel-toplevel.background na-tray-applet {
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color; }
 .nemo-window .sidebar {
-  background-color: @theme_bg_color; }
+  color: @sidebar_fg_color;
+  background-color: @sidebar_bg_color; }
   .nemo-window .sidebar .view, .nemo-window .sidebar iconview, .nemo-window .sidebar row {
+    color: @sidebar_fg_color;
     background-color: transparent; }
     .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar iconview.cell:selected, .nemo-window .sidebar row.cell:selected {
       border-color: @theme_selected_bg_color;
