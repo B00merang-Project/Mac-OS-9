@@ -1987,6 +1987,12 @@ filechooser .sidebar, .nautilus-window .sidebar, .nemo-window .sidebar {
     .caja-navigation-window .caja-side-pane .expander:hover {
       color: #9999FF; }
 
+stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list {
+  border-right: 1px solid shade(#DCDCDC, 0.8);
+  border-left-style: none; }
+stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list {
+  border-left: 1px solid shade(#DCDCDC, 0.8);
+  border-right-style: none; }
 stacksidebar row {
   padding: 10px 4px; }
   stacksidebar row > label {
