@@ -1419,6 +1419,10 @@ separator {
     min-height: 2px;
     background-color: shade(#DCDCDC, 0.65);
     background-image: linear-gradient(to bottom, shade(#DCDCDC, 0.65) 50%, white 50%); }
+  menu menuitem separator {
+    color: #DCDCDC;
+    background-image: none;
+    background-color: shade(#DCDCDC, 0.6); }
   popover separator {
     border: 0;
     color: alpha(currentColor, 0.5);
