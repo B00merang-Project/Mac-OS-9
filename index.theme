@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Mac OS 9 Classic
+Comment=A theme by Christian Medel (Elbullazul)
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Mac OS 9 Classic
+MetacityTheme=Mac OS 9 Classic
+IconTheme=NineIcons
+CursorTheme=DMZ-Black
+ButtonLayout=close,minimize,maximize:
