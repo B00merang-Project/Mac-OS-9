@@ -642,7 +642,7 @@ image {
 .caja-location-entry {
   padding: 3px 5px; }
 
-scrolledwindow viewport.frame {
+scrolledwindow.frame, scrolledwindow viewport.frame {
   border: none; }
 
 arrow, combobox arrow {
@@ -1531,29 +1531,41 @@ colorchooser #add-color-button {
 
 headerbar, headerbar:not(.titlebar) {
   padding: 4px 8px;
-  border-width: 0;
-  border-style: solid;
-  border-color: mix(shade(#DCDCDC, 0.8), #DCDCDC, 0.5);
-  border-bottom-width: 1px;
-  box-shadow: 0 1px shade(#DCDCDC, 0.8);
+  min-height: 32px;
   color: #000000;
-  background-color: #DCDCDC; }
+  background-image: url("assets/titlebar.png");
+  background-size: 100% 32px;
+  background-repeat: no-repeat repeat;
+  background-color: shade(#DCDCDC, 0.9);
+  box-shadow: inset 0 0 0 4px shade(#DCDCDC, 0.9), inset 1px 1px white, inset -1px -1px shade(shade(#DCDCDC, 0.9), 0.85);
+  border-bottom: 1px solid shade(shade(#DCDCDC, 0.8), 0.8); }
   headerbar:backdrop, headerbar:not(.titlebar):backdrop {
-    border-color: shade(#DCDCDC, 0.8);
+    box-shadow: none;
     color: #000000;
-    background-color: #DCDCDC; }
-  .titlebar headerbar, .titlebar headerbar:backdrop, .titlebar headerbar:not(.titlebar), .titlebar headerbar:not(.titlebar):backdrop {
-    background-color: transparent; }
-  .tiled headerbar:backdrop, .tiled headerbar, .tiled-top headerbar:backdrop, .tiled-top headerbar, .tiled-right headerbar:backdrop, .tiled-right headerbar, .tiled-bottom headerbar:backdrop, .tiled-bottom headerbar, .tiled-left headerbar:backdrop, .tiled-left headerbar, .maximized headerbar:backdrop, .maximized headerbar, .fullscreen headerbar:backdrop, .fullscreen headerbar, .tiled headerbar:not(.titlebar):backdrop, .tiled headerbar:not(.titlebar), .tiled-top headerbar:not(.titlebar):backdrop, .tiled-top headerbar:not(.titlebar), .tiled-right headerbar:not(.titlebar):backdrop, .tiled-right headerbar:not(.titlebar), .tiled-bottom headerbar:not(.titlebar):backdrop, .tiled-bottom headerbar:not(.titlebar), .tiled-left headerbar:not(.titlebar):backdrop, .tiled-left headerbar:not(.titlebar), .maximized headerbar:not(.titlebar):backdrop, .maximized headerbar:not(.titlebar), .fullscreen headerbar:not(.titlebar):backdrop, .fullscreen headerbar:not(.titlebar) {
+    background-image: none;
+    background-color: shade(#DCDCDC, 0.9);
+    border-bottom-color: shade(shade(#DCDCDC, 0.8), 0.8); }
+  .tiled headerbar, .tiled headerbar:backdrop, .maximized headerbar, .maximized headerbar:backdrop, .tiled headerbar:not(.titlebar), .tiled headerbar:not(.titlebar):backdrop, .maximized headerbar:not(.titlebar), .maximized headerbar:not(.titlebar):backdrop {
     border-radius: 0; }
+  separator:first-child + headerbar, separator:first-child + headerbar:backdrop, headerbar:first-child, headerbar:first-child:backdrop, separator:first-child + headerbar:not(.titlebar), separator:first-child + headerbar:not(.titlebar):backdrop, headerbar:not(.titlebar):first-child, headerbar:not(.titlebar):first-child:backdrop {
+    border-top-left-radius: 0px; }
+    .maximized separator:first-child + headerbar, .tiled separator:first-child + headerbar, .maximized separator:first-child + headerbar:backdrop, .tiled separator:first-child + headerbar:backdrop, .maximized headerbar:first-child, .tiled headerbar:first-child, .maximized headerbar:first-child:backdrop, .tiled headerbar:first-child:backdrop, .maximized separator:first-child + headerbar:not(.titlebar), .tiled separator:first-child + headerbar:not(.titlebar), .maximized separator:first-child + headerbar:not(.titlebar):backdrop, .tiled separator:first-child + headerbar:not(.titlebar):backdrop, .maximized headerbar:not(.titlebar):first-child, .tiled headerbar:not(.titlebar):first-child, .maximized headerbar:not(.titlebar):first-child:backdrop, .tiled headerbar:not(.titlebar):first-child:backdrop {
+      border-radius: 0; }
+  headerbar:last-child, headerbar:last-child:backdrop, headerbar:not(.titlebar):last-child, headerbar:not(.titlebar):last-child:backdrop {
+    border-top-right-radius: 0px; }
+    .maximized headerbar:last-child, .tiled headerbar:last-child, .maximized headerbar:last-child:backdrop, .tiled headerbar:last-child:backdrop, .maximized headerbar:not(.titlebar):last-child, .tiled headerbar:not(.titlebar):last-child, .maximized headerbar:not(.titlebar):last-child:backdrop, .tiled headerbar:not(.titlebar):last-child:backdrop {
+      border-radius: 0; }
   headerbar .title, headerbar:not(.titlebar) .title {
     padding-left: 12px;
     padding-right: 12px;
-    font-weight: bold; }
+    font-weight: bold;
+    background-color: shade(#DCDCDC, 0.9);
+    box-shadow: 0 10px shade(#DCDCDC, 0.9), 0 -10px shade(#DCDCDC, 0.9); }
   headerbar .subtitle, headerbar:not(.titlebar) .subtitle {
     font-size: smaller;
     padding-left: 12px;
-    padding-right: 12px; }
+    padding-right: 12px;
+    background-color: shade(#DCDCDC, 0.9); }
   headerbar button, headerbar:not(.titlebar) button {
     padding: 4px 9px;
     border-style: solid;
@@ -1580,6 +1592,27 @@ headerbar, headerbar:not(.titlebar) {
       border-color: shade(#DCDCDC, 0.7); }
   headerbar entry, headerbar:not(.titlebar) entry {
     padding: 4px 8px; }
+  headerbar.titlebar, .titlebar headerbar, headerbar:not(.titlebar).titlebar, .titlebar headerbar:not(.titlebar) {
+    border-radius: 0px 0px 0px 0px; }
+  headerbar .titlebutton.close, headerbar .titlebutton.maximize, headerbar .titlebutton.minimize, headerbar .titlebutton:not(separator), headerbar:not(.titlebar) .titlebutton.close, headerbar:not(.titlebar) .titlebutton.maximize, headerbar:not(.titlebar) .titlebutton.minimize, headerbar:not(.titlebar) .titlebutton:not(separator) {
+    color: transparent;
+    padding: 0;
+    min-width: 17px;
+    min-height: 17px;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    -gtk-icon-shadow: none;
+    background-position: center;
+    background-repeat: no-repeat; }
+  headerbar .titlebutton.close, headerbar:not(.titlebar) .titlebutton.close {
+    background: url("assets/close.png"), shade(#DCDCDC, 0.9); }
+  headerbar .titlebutton.minimize, headerbar:not(.titlebar) .titlebutton.minimize {
+    background: url("assets/minimize.png"), shade(#DCDCDC, 0.9); }
+  headerbar .titlebutton.maximize, headerbar:not(.titlebar) .titlebutton.maximize {
+    background: url("assets/maximize.png"), shade(#DCDCDC, 0.9); }
+  headerbar .titlebutton:backdrop, headerbar:not(.titlebar) .titlebutton:backdrop {
+    background: shade(#DCDCDC, 0.9); }
 
 toolbar {
   padding: 4px;
@@ -1876,9 +1909,13 @@ tooltip {
 textview {
   color: #000000;
   background-color: #FFFFFF; }
-  textview text:selected, textview text selection, textview text:selected:focus, textview text selection:focus {
-    color: #FFFFFF;
-    background-color: #9999FF; }
+  textview text {
+    background-color: #FFFFFF; }
+    textview text:selected, textview text selection, textview text:selected:focus, textview text selection:focus {
+      color: #FFFFFF;
+      background-color: #9999FF; }
+    textview text:backdrop {
+      background-color: #FFFFFF; }
 
 treeview {
   -treeview-vertical-separator: 0; }
@@ -2290,60 +2327,6 @@ decoration {
     border-radius: 0px;
     background-color: alpha(white, 0.95);
     box-shadow: none; }
-
-.titlebar {
-  border-bottom: none;
-  border-radius: 0px 0px 0px 0px; }
-  .titlebar .title {
-    padding-left: 12px;
-    padding-right: 12px;
-    font-weight: bold;
-    background-color: shade(#DCDCDC, 0.9); }
-  .titlebar .subtitle {
-    font-size: smaller;
-    padding-left: 12px;
-    padding-right: 12px;
-    color: alpha(currentColor, 0.7);
-    background-color: shade(#DCDCDC, 0.9); }
-  .titlebar .titlebutton.close, .titlebar .titlebutton.maximize, .titlebar .titlebutton.minimize, .titlebar .titlebutton:not(separator) {
-    color: transparent;
-    padding: 0;
-    min-width: 17px;
-    min-height: 17px;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    -gtk-icon-shadow: none;
-    background-position: center;
-    background-repeat: no-repeat; }
-  .titlebar .titlebutton.close {
-    background: url("assets/close.png"), shade(#DCDCDC, 0.9); }
-  .titlebar .titlebutton.minimize {
-    background: url("assets/minimize.png"), shade(#DCDCDC, 0.9); }
-  .titlebar .titlebutton.maximize {
-    background: url("assets/maximize.png"), shade(#DCDCDC, 0.9); }
-  .titlebar .titlebutton:backdrop {
-    background: shade(#DCDCDC, 0.9); }
-  .tiled .titlebar:not(headerbar), .tiled .titlebar:backdrop:not(headerbar), .maximized .titlebar:not(headerbar), .maximized .titlebar:backdrop:not(headerbar) {
-    border-radius: 0; }
-
-.titlebar, .titlebar:not(headerbar), headerbar.default-decoration, .csd headerbar.default-decoration, .default-decoration.titlebar:not(headerbar), .csd .default-decoration.titlebar:not(headerbar) {
-  min-height: 32px;
-  color: #000000;
-  background-image: url("assets/titlebar.png");
-  background-size: 100% 32px;
-  background-repeat: no-repeat repeat;
-  background-color: shade(#DCDCDC, 0.9);
-  box-shadow: inset 0 0 0 4px shade(#DCDCDC, 0.9), inset 1px 1px white, inset -1px -1px shade(shade(#DCDCDC, 0.9), 0.85);
-  border-bottom: 1px solid shade(shade(#DCDCDC, 0.8), 0.8); }
-  .titlebar headerbar, .titlebar:not(headerbar) headerbar, headerbar.default-decoration headerbar, .csd headerbar.default-decoration headerbar, .default-decoration.titlebar:not(headerbar) headerbar, .csd .default-decoration.titlebar:not(headerbar) headerbar {
-    border-bottom: none; }
-  .titlebar:backdrop, .titlebar:not(headerbar):backdrop, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop, .default-decoration.titlebar:not(headerbar):backdrop, .csd .default-decoration.titlebar:not(headerbar):backdrop {
-    box-shadow: none;
-    color: #000000;
-    background-image: none;
-    background-color: shade(#DCDCDC, 0.9);
-    border-bottom-color: shade(shade(#DCDCDC, 0.8), 0.8); }
 
 messagedialog {
   border-bottom-left-radius: 0px;
