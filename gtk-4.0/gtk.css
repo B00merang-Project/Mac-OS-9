@@ -574,75 +574,6 @@ toolbar {
       background-color: transparent;
       color: #000000; }
 
-.primary-toolbar {
-  padding: 4px;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: #c6c6c6;
-  color: #000000;
-  background-color: #DCDCDC; }
-  .primary-toolbar:backdrop {
-    border-color: #DCDCDC;
-    color: #000000;
-    background-color: #DCDCDC; }
-  .primary-toolbar button, .primary-toolbar .raised button {
-    padding: 4px 9px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 3px;
-    color: #000000;
-    border-color: #616161;
-    background-color: #DCDCDC;
-    box-shadow: inset 2px 2px white, inset 1px 1px #DCDCDC, inset -2px -2px #bbbbbb, inset -1px -1px #8f8f8f;
-    outline-offset: 2px;
-    outline-style: solid;
-    outline-color: rgba(0, 0, 0, 0.5); }
-    .primary-toolbar button:active, .primary-toolbar button:checked, .primary-toolbar .raised button:active, .primary-toolbar .raised button:checked {
-      background-color: #c6c6c6;
-      box-shadow: inset -2px -2px #e6e6e6, inset -1px -1px #c6c6c6, inset 2px 2px #bbbbbb, inset 1px 1px #8f8f8f; }
-      .primary-toolbar button:active:disabled, .primary-toolbar button:checked:disabled, .primary-toolbar .raised button:active:disabled, .primary-toolbar .raised button:checked:disabled {
-        color: #0b0b0b;
-        box-shadow: none;
-        border-color: #848484; }
-    .primary-toolbar button:disabled, .primary-toolbar .raised button:disabled {
-      color: #373737;
-      box-shadow: none;
-      border-color: #9a9a9a; }
-
-.inline-toolbar {
-  padding: 1px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c6c6c6;
-  border-radius: 0;
-  background-color: #DCDCDC; }
-  .inline-toolbar:backdrop {
-    border-color: #b0b0b0;
-    background-color: #DCDCDC; }
-  .inline-toolbar toolbutton > button {
-    padding: 4px 9px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 3px;
-    color: #000000;
-    border-color: #616161;
-    background-color: #DCDCDC;
-    box-shadow: inset 2px 2px white, inset 1px 1px #DCDCDC, inset -2px -2px #bbbbbb, inset -1px -1px #8f8f8f;
-    outline-offset: 2px;
-    outline-style: solid;
-    outline-color: rgba(0, 0, 0, 0.5); }
-    .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
-      background-color: #c6c6c6;
-      box-shadow: inset -2px -2px #e6e6e6, inset -1px -1px #c6c6c6, inset 2px 2px #bbbbbb, inset 1px 1px #8f8f8f; }
-      .inline-toolbar toolbutton > button:active:disabled, .inline-toolbar toolbutton > button:checked:disabled {
-        color: #0b0b0b;
-        box-shadow: none;
-        border-color: #848484; }
-    .inline-toolbar toolbutton > button:disabled {
-      color: #373737;
-      box-shadow: none;
-      border-color: #9a9a9a; }
-
 searchbar {
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -1607,85 +1538,41 @@ actionbar {
     font-size: smaller;
     padding: 0 12px; }
 
-overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0.55, center top, 0.6, from(rgba(153, 153, 255, 0.2)), to(transparent));
-  background-size: 100% 60%;
+scrolledwindow > overshoot.top {
+  background-image: radial-gradient(farthest-side at top, black, transparent);
+  background-size: 100% 50%;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top;
   background-color: transparent;
   border: none;
   box-shadow: none; }
 
-overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0.55, center bottom, 0.6, from(rgba(153, 153, 255, 0.2)), to(transparent));
-  background-size: 100% 60%;
+scrolledwindow > overshoot.bottom {
+  background-image: radial-gradient(farthest-side at bottom, black, transparent);
+  background-size: 100% 50%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: bottom;
   background-color: transparent;
   border: none;
   box-shadow: none; }
 
-overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0.55, left center, 0.6, from(rgba(153, 153, 255, 0.2)), to(transparent));
-  background-size: 60% 100%;
+scrolledwindow > overshoot.left {
+  background-image: radial-gradient(farthest-side at left, black, transparent);
+  background-size: 50% 100%;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left;
   background-color: transparent;
   border: none;
   box-shadow: none; }
 
-overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0.55, right center, 0.6, from(rgba(153, 153, 255, 0.2)), to(transparent));
-  background-size: 60% 100%;
+scrolledwindow > overshoot.right {
+  background-image: radial-gradient(farthest-side at right, black, transparent);
+  background-size: 50% 100%;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right;
   background-color: transparent;
   border: none;
   box-shadow: none; }
-
-undershoot.top {
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-top: 1px;
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: center top; }
-
-undershoot.bottom {
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-bottom: 1px;
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: center bottom; }
-
-undershoot.left {
-  background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-left: 1px;
-  background-size: 1px 10px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: left center; }
-
-undershoot.right {
-  background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-right: 1px;
-  background-size: 1px 10px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: right center; }
-
-.overlay-bar {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 0;
-  padding: 3px 6px;
-  margin: 3px; }
-  .overlay-bar label {
-    color: #000000; }
 
 separator {
   -gtk-icon-source: none;
@@ -2166,9 +2053,6 @@ button.color {
   border-style: solid;
   background-color: #DCDCDC; }
 
-scrolledwindow viewport.frame {
-  border: none; }
-
 arrow, combobox arrow {
   color: alpha(currentColor, 0.75);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -2350,19 +2234,6 @@ menubutton arrow {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
   menubutton arrow.right {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-
-image {
-  color: alpha(currentColor, 0.75); }
-  image:hover {
-    color: alpha(currentColor, 0.9); }
-  image:selected, image:selected:hover {
-    color: #FFFFFF; }
-  image:disabled {
-    color: alpha(currentColor, 0.5); }
-  view image, view image:hover {
-    color: alpha(currentColor, 0.9); }
-  view image:selected, view image:selected:hover {
-    color: #FFFFFF; }
 
 .floating-bar {
   border-width: 1px;
