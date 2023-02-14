@@ -1,4 +1,4 @@
-[![built-with-azurra-framework](https://github.com/Elbullazul/Azurra_framework/raw/assets/azurra_framework_smaller.png)](https://github.com/Elbullazul/Azurra_framework)
+[![built-with-azurra-framework](https://github.com/B00merang-Project/Azurra_framework/raw/assets/azurra_framework_smaller.png)](https://github.com/B00merang-Project/Azurra_framework)
 
 # Mac OS 9
 The classic look of Mac OS 9, now for GTK 3 desktops
