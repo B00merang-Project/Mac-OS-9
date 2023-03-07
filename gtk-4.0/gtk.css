@@ -1240,11 +1240,10 @@ treeview ~ scrollbar.vertical {
   margin-top: -1px; }
 
 switch {
-  outline-offset: -4px;
   margin: 4px;
-  color: #000000;
   border-radius: 3px;
   border: 1px solid #b0b0b0;
+  color: #000000;
   background-color: #b0b0b0;
   box-shadow: inset 1px 1px #848484, inset -1px -1px #d1d1d1; }
   switch:checked {
@@ -1256,16 +1255,15 @@ switch {
     border-color: #d1d1d1;
     background-color: #d1d1d1;
     box-shadow: none; }
-  switch slider {
+  switch > slider {
     margin: -1px;
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #000000;
     border-radius: 3px;
-    color: #000000;
     border-color: #616161;
-    box-shadow: inset 2px 2px white, inset 1px 1px #DCDCDC, inset -2px -2px #bbbbbb, inset -1px -1px #8f8f8f;
-    background-color: #DCDCDC; }
-  switch:disabled slider {
+    background-color: #DCDCDC;
+    background-image: none;
+    box-shadow: inset 2px 2px white, inset 1px 1px #DCDCDC, inset -2px -2px #bbbbbb, inset -1px -1px #8f8f8f; }
+  switch:disabled > slider {
     box-shadow: none;
     border-color: #bcbcbc;
     background-color: #d1d1d1; }
