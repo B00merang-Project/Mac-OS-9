@@ -1180,70 +1180,64 @@ notebook {
 scrollbar {
   border: 1px solid black;
   background-color: #b0b0b0;
-  box-shadow: inset 2px 2px #848484, inset -2px 0 #d1d1d1; }
-  scrollbar trough {
-    border: none;
-    border-radius: 0; }
-  scrollbar button {
-    box-shadow: inset 1px 1px white, inset -1px -1px #bbbbbb; }
-    scrollbar button:active {
-      box-shadow: inset -1px -1px white, inset 1px 1px #bbbbbb; }
-    scrollbar button, scrollbar button:backdrop, scrollbar button:disabled, scrollbar button:disabled:backdrop {
-      border-radius: 0;
-      color: transparent;
-      padding: 0;
-      background-size: auto;
-      background-position: center center;
-      background-repeat: no-repeat; }
-  scrollbar.overlay-indicator {
+  box-shadow: inset 2px 2px #848484, inset -2px 0 #d1d1d1;
+  /*
+  &.horizontal button {
+    &.down { -gtk-icon-source: -gtk-icontheme("pan-right-symbolic"); }
+    &.up { -gtk-icon-source: -gtk-icontheme("pan-left-symbolic"); }
+  }
+
+  &.vertical button {
+    &.down { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+    &.up { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+  }
+  */ }
+  scrollbar > range > trough > slider {
+    margin: 0px;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 0px;
+    border: 1px solid #4040dd;
+    border-top-color: #e0e0ff;
+    border-left-color: #e0e0ff;
+    background-clip: padding-box;
+    background-color: #9999FF;
+    background-position: center center;
+    background-repeat: no-repeat; }
+  scrollbar.horizontal > range > trough > slider {
+    background-image: url("assets/handle-horiz.png"); }
+  scrollbar.vertical > range > trough > slider {
+    background-image: url("assets/handle-vert.png"); }
+  scrollbar.horizontal > range > trough > slider {
+    min-width: 45px; }
+  scrollbar.vertical > range > trough > slider {
+    min-height: 45px; }
+  scrollbar > range.fine-tune > trough > slider {
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 0px; }
+  scrollbar > range.fine-tune.horizontal > trough > slider {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  scrollbar > range.fine-tune.vertical > trough > slider {
+    margin-left: 0px;
+    margin-right: 0px; }
+  scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
     opacity: 1; }
-  scrollbar.horizontal slider {
-    min-width: 45px;
-    min-height: 14px;
-    margin: 0;
-    border: 1px solid #4040dd;
-    border-top-color: #e0e0ff;
-    border-left-color: #e0e0ff;
-    border-radius: 0px;
-    background-clip: padding-box;
-    background-color: #9999FF;
-    background-position: center center;
-    background-image: url("assets/handle-horiz.png");
-    background-repeat: no-repeat; }
-  scrollbar.horizontal button {
-    min-height: 14px;
-    min-width: 14px;
-    margin-top: -1px;
-    margin-bottom: -1px; }
-    scrollbar.horizontal button.down {
-      background-image: url("assets/arrow-right.png"); }
-    scrollbar.horizontal button.up {
-      background-image: url("assets/arrow-left.png"); }
-  scrollbar.vertical slider {
-    min-width: 14px;
-    min-height: 45px;
-    margin: 0;
-    border: 1px solid #4040dd;
-    border-top-color: #e0e0ff;
-    border-left-color: #e0e0ff;
-    border-radius: 0px;
-    background-clip: padding-box;
-    background-color: #9999FF;
-    background-position: center center;
-    background-image: url("assets/handle-vert.png");
-    background-repeat: no-repeat; }
-  scrollbar.vertical button {
-    min-height: 14px;
-    min-width: 14px;
-    margin-left: -1px;
-    margin-right: -1px; }
-    scrollbar.vertical button.down {
-      background-image: url("assets/arrow-down.png"); }
-    scrollbar.vertical button.up {
-      background-image: url("assets/arrow-up.png"); }
-  treeview ~ scrollbar.vertical {
-    border-top: 1px solid #b0b0b0;
-    margin-top: -1px; }
+    scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
+      margin: 0px; }
+    scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
+      min-width: 45px;
+      min-height: 14px; }
+    scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
+      min-width: 14px;
+      min-height: 45px; }
+  scrollbar.overlay-indicator.dragging, scrollbar.overlay-indicator.hovering {
+    opacity: 1; }
+
+treeview ~ scrollbar.vertical {
+  border-top: 1px solid #b0b0b0;
+  margin-top: -1px; }
 
 switch {
   outline-offset: -4px;
