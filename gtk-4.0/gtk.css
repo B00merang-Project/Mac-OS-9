@@ -967,11 +967,11 @@ popover.background, popover.background:backdrop {
 
 popover > arrow,
 popover > contents {
-  border: 1px solid #b0b0b0;
+  border: 1px solid black;
   color: #000000;
   background-color: #DCDCDC;
   background-clip: padding-box;
-  box-shadow: none; }
+  box-shadow: inset 1px 1px white, inset -1px -1px #bbbbbb; }
 
 popover > contents {
   border-radius: 0px; }
@@ -990,17 +990,17 @@ magnifier {
 
 popover.menu > contents {
   min-width: 120px;
-  padding: 4px; }
+  padding: 1px; }
 
 popover.menu box.inline-buttons {
   padding: 0px 4px; }
 
 popover.menu modelbutton {
-  min-height: 20px;
+  min-height: 24px;
   padding-left: 4px;
   padding-right: 4px;
-  border: none;
   border-radius: 0px;
+  border: none;
   background-color: transparent;
   background-image: none;
   box-shadow: none; }
@@ -1032,7 +1032,7 @@ popover.menu list separator {
   margin: 0; }
 
 popover.menu popover.menu {
-  padding: 0 0 4px 0; }
+  padding: 0 0 1px 0; }
   popover.menu popover.menu > contents {
     margin: 0;
     border-radius: 0px; }
@@ -1061,7 +1061,8 @@ menubar {
     min-height: 12px;
     border: none;
     color: #000000;
-    background-color: transparent; }
+    background-color: transparent;
+    box-shadow: none; }
     menubar > item:selected {
       color: #FFFFFF;
       background-color: #9999FF; }
@@ -1294,7 +1295,7 @@ checkbutton.text-button, radiobutton.text-button {
   outline-offset: 0; }
 
 check, radio {
-  margin: 4px;
+  margin: 0 4px;
   min-height: 16px;
   min-width: 16px;
   border: none;
