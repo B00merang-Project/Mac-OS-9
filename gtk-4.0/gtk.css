@@ -640,9 +640,6 @@ toolbar {
   toolbar:backdrop {
     color: #000000;
     background-color: #DCDCDC; }
-  toolbar:disabled {
-    color: #6e6e6e;
-    background-color: #d1d1d1; }
   toolbar button.flat {
     border-color: transparent;
     border-radius: 3px;
@@ -762,44 +759,53 @@ infobar .close {
   infobar .close:active {
     background-color: rgba(0, 0, 0, 0.05); }
 
-headerbar, headerbar:not(.titlebar) {
-  padding: 4px 8px;
+headerbar,
+headerbar:not(.titlebar) {
   min-height: 32px;
+  padding: 4px 8px;
+  border-bottom: 1px solid #8d8d8d;
   color: #000000;
   background-image: url("assets/titlebar.png");
   background-size: 100% 32px;
   background-repeat: no-repeat repeat;
   background-color: #c6c6c6;
-  box-shadow: inset 0 0 0 4px #c6c6c6, inset 1px 1px white, inset -1px -1px #a8a8a8;
-  border-bottom: 1px solid #8d8d8d; }
-  headerbar:backdrop, headerbar:not(.titlebar):backdrop {
-    box-shadow: none;
+  box-shadow: inset 0 0 0 4px #c6c6c6, inset 1px 1px white, inset -1px -1px #a8a8a8; }
+  headerbar:backdrop,
+  headerbar:not(.titlebar):backdrop {
+    border-bottom-color: #8d8d8d;
     color: #000000;
     background-image: none;
     background-color: #c6c6c6;
-    border-bottom-color: #8d8d8d; }
+    box-shadow: none; }
   .tiled headerbar, .tiled headerbar:backdrop, .maximized headerbar, .maximized headerbar:backdrop, .tiled headerbar:not(.titlebar), .tiled headerbar:not(.titlebar):backdrop, .maximized headerbar:not(.titlebar), .maximized headerbar:not(.titlebar):backdrop {
     border-radius: 0; }
-  separator:first-child + headerbar, separator:first-child + headerbar:backdrop, headerbar:first-child, headerbar:first-child:backdrop, separator:first-child + headerbar:not(.titlebar), separator:first-child + headerbar:not(.titlebar):backdrop, headerbar:not(.titlebar):first-child, headerbar:not(.titlebar):first-child:backdrop {
+  separator:first-child + headerbar, separator:first-child + headerbar:backdrop, headerbar:first-child, headerbar:first-child:backdrop, separator:first-child + headerbar:not(.titlebar), separator:first-child + headerbar:not(.titlebar):backdrop,
+  headerbar:not(.titlebar):first-child,
+  headerbar:not(.titlebar):first-child:backdrop {
     border-top-left-radius: 0px; }
     .maximized separator:first-child + headerbar, .tiled separator:first-child + headerbar, .maximized separator:first-child + headerbar:backdrop, .tiled separator:first-child + headerbar:backdrop, .maximized headerbar:first-child, .tiled headerbar:first-child, .maximized headerbar:first-child:backdrop, .tiled headerbar:first-child:backdrop, .maximized separator:first-child + headerbar:not(.titlebar), .tiled separator:first-child + headerbar:not(.titlebar), .maximized separator:first-child + headerbar:not(.titlebar):backdrop, .tiled separator:first-child + headerbar:not(.titlebar):backdrop, .maximized headerbar:not(.titlebar):first-child, .tiled headerbar:not(.titlebar):first-child, .maximized headerbar:not(.titlebar):first-child:backdrop, .tiled headerbar:not(.titlebar):first-child:backdrop {
       border-radius: 0; }
-  headerbar:last-child, headerbar:last-child:backdrop, headerbar:not(.titlebar):last-child, headerbar:not(.titlebar):last-child:backdrop {
+  headerbar:last-child, headerbar:last-child:backdrop,
+  headerbar:not(.titlebar):last-child,
+  headerbar:not(.titlebar):last-child:backdrop {
     border-top-right-radius: 0px; }
     .maximized headerbar:last-child, .tiled headerbar:last-child, .maximized headerbar:last-child:backdrop, .tiled headerbar:last-child:backdrop, .maximized headerbar:not(.titlebar):last-child, .tiled headerbar:not(.titlebar):last-child, .maximized headerbar:not(.titlebar):last-child:backdrop, .tiled headerbar:not(.titlebar):last-child:backdrop {
       border-radius: 0; }
-  headerbar .title, headerbar:not(.titlebar) .title {
+  headerbar .title,
+  headerbar:not(.titlebar) .title {
     padding-left: 12px;
     padding-right: 12px;
     font-weight: bold;
     background-color: #c6c6c6;
     box-shadow: 0 10px #c6c6c6, 0 -10px #c6c6c6; }
-  headerbar .subtitle, headerbar:not(.titlebar) .subtitle {
+  headerbar .subtitle,
+  headerbar:not(.titlebar) .subtitle {
     font-size: smaller;
     padding-left: 12px;
     padding-right: 12px;
     background-color: #c6c6c6; }
-  headerbar.titlebar, .titlebar headerbar, headerbar.titlebar:not(.titlebar), .titlebar headerbar:not(.titlebar) {
+  headerbar.titlebar, .titlebar headerbar,
+  headerbar.titlebar:not(.titlebar), .titlebar headerbar:not(.titlebar) {
     border-radius: 0px 0px 0px 0px; }
 
 windowcontrols {
@@ -1716,13 +1722,11 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
     border-spacing: 12px; }
 
 .app-notification {
+  margin: 5px;
   border: 1px solid #b0b0b0;
-  background-color: #FFFFFF;
   color: #000000;
-  padding: 8px;
-  margin: 5px; }
-  .app-notification border {
-    border: none; }
+  background-color: #FFFFFF;
+  padding: 8px; }
 
 expander {
   min-width: 16px;
@@ -2139,7 +2143,7 @@ shortcut > .keycap {
   font-size: smaller; }
 
 stackswitcher > button.text-button {
-  min-width: 100px; }
+  min-width: 120px; }
 
 stackswitcher.circular {
   border-spacing: 12px; }
