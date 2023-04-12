@@ -1482,17 +1482,19 @@ progressbar {
   font-size: smaller;
   color: gray; }
   progressbar > trough {
-    border: 1px solid black;
     border-radius: 0px;
+    border: 1px solid black;
     background-color: #b0b0b0;
     box-shadow: inset 1px 1px #848484, inset -1px -1px #d1d1d1; }
   progressbar > trough > progress {
-    border: 1px solid #000055;
     border-radius: 0px;
-    background-image: linear-gradient(to bottom, #333399, #FFFFFF, #000055);
-    box-shadow: inset 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px rgba(0, 0, 0, 0.6); }
+    border: 1px solid #000055; }
   progressbar.vertical > trough > progress {
-    background-image: linear-gradient(to right, #333399, #FFFFFF, #000055); }
+    background-image: linear-gradient(to right, #333399 10%, #FFFFFF, #000055 90%);
+    box-shadow: inset 0px 2px rgba(255, 255, 255, 0.4), inset 0px -2px rgba(0, 0, 0, 0.5); }
+  progressbar.horizontal > trough > progress {
+    background-image: linear-gradient(to bottom, #333399 10%, #FFFFFF, #000055 90%);
+    box-shadow: inset 2px 0px rgba(255, 255, 255, 0.4), inset -2px 0px rgba(0, 0, 0, 0.5); }
   progressbar.horizontal > trough {
     min-width: 150px; }
   progressbar.vertical > trough {
